@@ -3,16 +3,10 @@ const axios = require('axios');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const querystring = require('querystring');
-const https = require('https');
-const fs = require('fs');
 
 dotenv.config();
 const app = express();
-app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true
-}));
-
+app.use(cors());
 
 const PORT = process.env.PORT || 8888;
 
@@ -34,6 +28,10 @@ const generateRandomString = length => {
 
 const stateKey = 'spotify_auth_state';
 
+app.get('/', (req, res) => {
+    res.json({name: 'Spotify Wrapped App', repo: 'https://github.com/robertsergeev/spotify_wrapped'})
+})
+
 /**
  * 1. Redirect user to Spotify login
  */
@@ -45,7 +43,7 @@ app.get('/login', (req, res) => {
         response_type: 'code',
         client_id: SPOTIFY_CLIENT_ID,
         scope: scope,
-        redirect_uri: SPOTIFY_REDIRECT_URI, // здесь должен быть HTTPS
+        redirect_uri: SPOTIFY_REDIRECT_URI,
         state: state
     });
 
@@ -111,11 +109,6 @@ app.get('/refresh_token', async (req, res) => {
     }
 });
 
-const server = https.createServer({
-    key: fs.readFileSync('./certs/key.pem'),
-    cert: fs.readFileSync('./certs/cert.pem'),
-}, app);
-
-server.listen(8888, () => {
-    console.log('HTTPS server running on https://localhost:8888');
+app.listen(PORT, () => {
+    console.log('server running on http://localhost:8888');
 });
