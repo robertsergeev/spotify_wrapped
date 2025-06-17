@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import TopArtists from './components/TopArtists';
 import TopTracks from './components/TopTracks';
 
-const BASE_URL = import.meta.env.VITE_SERVER_URL || 'https://f417-2a03-ec00-b1a5-10f1-15f4-b983-572-71a1.ngrok-free.app';
+const BASE_URL = import.meta.env.VITE_SERVER_URL || 'https://spotify-wrapped-kqxf.onrender.com';
 
 function App() {
     const [token, setToken] = useState(null);
@@ -22,7 +21,7 @@ function App() {
         <div className="App" style={{ padding: '2rem' }}>
             <h1>Твоя Spotify Статистика</h1>
             {!token ? (
-                <a href={`https://f417-2a03-ec00-b1a5-10f1-15f4-b983-572-71a1.ngrok-free.app/login`}>
+                <a href={`${BASE_URL}/login`}>
                     <button>Войти через Spotify</button>
                 </a>
             ) : (
