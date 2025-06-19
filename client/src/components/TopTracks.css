@@ -1,0 +1,30 @@
+.top_tracks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    align-items: center;
+}
+
+.top_tracks ul {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.track_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 150px;
+    text-align: center;
+}
+
+.track_card img {
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}

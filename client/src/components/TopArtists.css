@@ -1,0 +1,36 @@
+.top_artists {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    align-items: center;
+}
+
+.term_choice {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.top_artists ul {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.artist_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 150px;
+    text-align: center;
+}
+
+.artist_card img {
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}

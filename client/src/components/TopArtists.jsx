@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import "./TopArtists.css"
 
 function TopArtists({ token }) {
     const [artists, setArtists] = useState([]);
@@ -8,12 +9,15 @@ function TopArtists({ token }) {
     
     useEffect(() => {
         axios
-            .get(`https://api.spotify.com/v1/me/top/artists?time_range=${term}&limit=10`, {
+            .get(`https://api.spotify.com/v1/me/top/artists?time_range=${term}&limit=24`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            .then(res => setArtists(res.data.items))
+            .then(res => {
+                setArtists(res.data.items)
+                console.log(res.data);
+            })
             .catch(err => console.error(err));
     }, [token, term]);
 
@@ -22,20 +26,20 @@ function TopArtists({ token }) {
     }
     
     return (
-        <div>
+        <div className='top_artists'>
             <h2>Топ артистов</h2>
             <div>
-                <p>Период:</p>
-                <div>
+                <div className='term_choice'>
                     <button onClick={() => changeTerm(TERMS.LONG_TERM)}>За все время</button>
-                    <button onClick={() => changeTerm(TERMS.MEDIUM_TERM)}>6 меяцев</button>
+                    <button onClick={() => changeTerm(TERMS.MEDIUM_TERM)}>6 месяцев</button>
                     <button onClick={() => changeTerm(TERMS.SHORT_TERM)}>4 недели</button>
                 </div>
             </div>
-            <ul style={{listStyle: 'none'}}>
-                {artists.map((artist, idx) => (
-                    <li key={artist.id}>
-                        #{idx + 1} — {artist.name}
+            <ul>
+                {artists.map((artist) => (
+                    <li className='artist_card' key={artist.id}>
+                        <img src={artist.images[0].url} alt=""/>
+                        <p>{artist.name}</p>
                     </li>
                 ))}
             </ul>
