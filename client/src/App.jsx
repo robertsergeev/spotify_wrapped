@@ -2,7 +2,8 @@ import {useEffect, useState} from 'react';
 import TopArtists from './components/TopArtists';
 import TopTracks from './components/TopTracks';
 import "./App.css"
-import {Link, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
+import Header from "./components/Header.jsx";
 
 const BASE_URL = import.meta.env.VITE_SERVER_URL || 'https://spotify-wrapped-kqxf.onrender.com';
 
@@ -21,18 +22,12 @@ function App() {
     }, []);
     
     return (<div className="App" style={{padding: '2rem'}}>
-        <header>
-            <h1>Твоя Spotify Статистика</h1>
-            <nav className='nav'>
-                <Link to={'/artists'} className='nav_link'>Топ Артистов</Link>
-                <Link to={'/tracks'} className='nav_link'>Топ Треков</Link>
-            </nav>
-        </header>
+        <Header token={token}/>
         {!token ? (<a href={`${BASE_URL}/login`}>
             <button>Войти через Spotify</button>
         </a>) : (<main>
                 <Routes>
-                    <Route path='/' element={<TopArtists token={token}/>}/>
+                    <Route path='/' element={<Navigate to={'/artists'} replace/>}/>
                     <Route path='/artists' element={<TopArtists token={token}/>}/>
                     <Route path='/tracks' element={<TopTracks token={token}/>}/>
                 </Routes>

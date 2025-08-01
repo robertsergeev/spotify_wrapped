@@ -10,7 +10,13 @@
     display: flex;
     gap: 20px;
     font-size: 18px;
+    margin-bottom: 30px;
 }
+
+.term_choice button.active, .term_choice button:hover{
+    text-decoration: underline;
+}
+
 
 .top_artists ul {
     display: flex;

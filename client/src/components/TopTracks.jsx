@@ -30,9 +30,9 @@ function TopTracks({ token }) {
             <h2>Топ треков</h2>
             <div>
                 <div className='term_choice'>
-                    <button onClick={() => changeTerm(TERMS.LONG_TERM)}>За все время</button>
-                    <button onClick={() => changeTerm(TERMS.MEDIUM_TERM)}>6 месяцев</button>
-                    <button onClick={() => changeTerm(TERMS.SHORT_TERM)}>4 недели</button>
+                    <button className={term === TERMS.LONG_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.LONG_TERM)}>За все время</button>
+                    <button className={term === TERMS.MEDIUM_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.MEDIUM_TERM)}>6 месяцев</button>
+                    <button className={term === TERMS.SHORT_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.SHORT_TERM)}>4 недели</button>
                 </div>
             </div>
             <ul>
