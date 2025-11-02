@@ -6,18 +6,12 @@
     align-items: center;
 }
 
-.term_choice button.active, term_choice button:hover {
-    text-decoration: underline;
-}
-
-.term_choice {
-    margin-bottom: 30px;
-}
 
 .top_tracks ul {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .track_card {

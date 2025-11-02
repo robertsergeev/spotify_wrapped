@@ -27,17 +27,17 @@ function TopArtists({ token }) {
     
     return (
         <div className='top_artists'>
-            <h2>Топ артистов</h2>
+            <h2>Your Top Artists</h2>
             <div>
                 <div className='term_choice'>
-                    <button className={term === TERMS.LONG_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.LONG_TERM)}>За все время</button>
-                    <button className={term === TERMS.MEDIUM_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.MEDIUM_TERM)}>6 месяцев</button>
-                    <button className={term === TERMS.SHORT_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.SHORT_TERM)}>4 недели</button>
+                    <button className={term === TERMS.LONG_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.LONG_TERM)}><span>All Time</span></button>
+                    <button className={term === TERMS.MEDIUM_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.MEDIUM_TERM)}><span>Last 6 Months</span></button>
+                    <button className={term === TERMS.SHORT_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.SHORT_TERM)}><span>Last 4 Weeks</span></button>
                 </div>
             </div>
             <ul>
                 {artists.map((artist) => (
-                    <li className='artist_card' key={artist.id}>
+                    <li className='artist_card item_card' key={artist.id}>
                         <img src={artist.images[0].url} alt=""/>
                         <p>{artist.name}</p>
                     </li>

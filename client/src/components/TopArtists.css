@@ -6,22 +6,11 @@
     align-items: center;
 }
 
-.term_choice {
-    display: flex;
-    gap: 20px;
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.term_choice button.active, .term_choice button:hover{
-    text-decoration: underline;
-}
-
-
 .top_artists ul {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .artist_card {
@@ -40,3 +29,4 @@
     object-fit: cover;
     border-radius: 50%;
 }
+

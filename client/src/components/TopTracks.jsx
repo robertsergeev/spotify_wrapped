@@ -27,17 +27,17 @@ function TopTracks({ token }) {
     
     return (
         <div className={'top_tracks'}>
-            <h2>Топ треков</h2>
+            <h2>Your Top Tracks</h2>
             <div>
                 <div className='term_choice'>
-                    <button className={term === TERMS.LONG_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.LONG_TERM)}>За все время</button>
-                    <button className={term === TERMS.MEDIUM_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.MEDIUM_TERM)}>6 месяцев</button>
-                    <button className={term === TERMS.SHORT_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.SHORT_TERM)}>4 недели</button>
+                    <button className={term === TERMS.LONG_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.LONG_TERM)}><span>All Time</span></button>
+                    <button className={term === TERMS.MEDIUM_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.MEDIUM_TERM)}><span>Last 6 Months</span></button>
+                    <button className={term === TERMS.SHORT_TERM ? 'active' : ''} onClick={() => changeTerm(TERMS.SHORT_TERM)}><span>Last 4 Weeks</span></button>
                 </div>
             </div>
             <ul>
                 {tracks.map((track) => (
-                    <li className='track_card' key={track.id}>
+                    <li className='track_card item_card' key={track.id}>
                         <img src={track.album.images[0].url} alt=""/>
                         <p>{track.name}</p>
                     </li>
