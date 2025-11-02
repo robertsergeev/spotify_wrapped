@@ -16,9 +16,24 @@ body {
     gap: 40px;
 }
 
-h1 {
-    margin-bottom: 30px;
+.logout-btn {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 10px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
 }
+
+.logout-btn:hover {
+
+}
+
 
 button {
     background: none;
