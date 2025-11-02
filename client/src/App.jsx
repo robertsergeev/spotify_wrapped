@@ -16,8 +16,9 @@ function App() {
             <Header token={token} onLogout={logout} />
             
             {!token ? (
-                <a href={`${BASE_URL}/login`}>
-                    <button>Войти через Spotify</button>
+                <a href={`${BASE_URL}/login`} className={'login-link'}>
+                    <h2>Your Spotify Stats</h2>
+                    <button className={'login-btn'}>LOG IN TO SPOTIFY</button>
                 </a>
             ) : (
                 <main>

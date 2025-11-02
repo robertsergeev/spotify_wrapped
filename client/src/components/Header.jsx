@@ -45,7 +45,7 @@ const Header = ({token, onLogout}) => {
                 
                 <ViewToggle/>
             </header>
-            : <header>Твоя Spotify Статистика</header>
+            : <header></header>
     );
 };
 

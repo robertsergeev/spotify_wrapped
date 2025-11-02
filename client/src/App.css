@@ -16,7 +16,7 @@ body {
     gap: 40px;
 }
 
-.logout-btn {
+.logout-btn, .login-btn{
     background-color: transparent;
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
@@ -30,8 +30,29 @@ body {
     text-align: center;
 }
 
-.logout-btn:hover {
+.login-link {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    align-items: center;
+}
 
+.login-link h2{
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    background: #1db954;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+    background: #22d866;
 }
 
 
